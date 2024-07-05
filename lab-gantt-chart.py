@@ -138,7 +138,7 @@ lab_members = [
     ]},
     {"name": "Elizabeth Hale", "periods": [
         {"start": "2024/01/08", "end": "2024/03/22", "role": Role.PhD_Rotation_Student},
-        {"start": "2024/03/25", "end": get_today_date_str(), "role": Role.PhD_Student}
+        {"start": "2024/03/23", "end": get_today_date_str(), "role": Role.PhD_Student}
     ]},
     {"name": "Regina Rajbanshi", "periods": [
         {"start": "2024/01/15", "end": get_today_date_str(), "role": Role.Undergrad_Student}
@@ -173,8 +173,7 @@ def plot_gantt_chart(lab_members):
             duration = (period['end'] - period['start']).days
             color = period['role'].color
             ax.barh(i, duration, left=start_date, color=color, edgecolor='black', linewidth=0.5, zorder=3)
-            
-            
+                        
             # Place text in front of the first bar only
             if first_period:
                 padded_position = start_date - timedelta(days=5)  # Increase or decrease days for more or less padding
